@@ -1,0 +1,395 @@
+/* =====================================================
+   Barbearia Cotede Ouro — estilos
+   Paleta: preto carvão + dourado + branco gelo
+   ===================================================== */
+
+   :root {
+    --cor-fundo: #111111;
+    --cor-fundo-2: #1a1a1a;
+    --cor-texto: #f5f0e8;
+    --cor-texto-suave: #b8b0a3;
+    --cor-ouro: #c9a227;
+    --cor-ouro-claro: #e6c75a;
+    --fonte-titulo: "Oswald", sans-serif;
+    --fonte-texto: "Inter", sans-serif;
+    --largura-max: 1100px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--fonte-texto);
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  
+  /* ===== Botões ===== */
+  .btn {
+    display: inline-block;
+    background: var(--cor-ouro);
+    color: #111;
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    padding: 0.9rem 2.2rem;
+    border-radius: 4px;
+    transition: background 0.25s, transform 0.25s;
+  }
+  
+  .btn:hover {
+    background: var(--cor-ouro-claro);
+    transform: translateY(-2px);
+  }
+  
+  .btn--outline {
+    background: transparent;
+    color: var(--cor-texto);
+    border: 2px solid var(--cor-ouro);
+  }
+  
+  .btn--outline:hover {
+    background: rgba(201, 162, 39, 0.15);
+  }
+  
+  .btn--small {
+    padding: 0.5rem 1.3rem;
+    font-size: 0.85rem;
+  }
+  
+  /* ===== Navbar ===== */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(17, 17, 17, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.25);
+  }
+  
+  .navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  
+  .navbar__logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cor-texto);
+    text-decoration: none;
+  }
+  
+  .logo__icon {
+    color: var(--cor-ouro);
+    margin-right: 0.3rem;
+  }
+  
+  .logo__gold {
+    color: var(--cor-ouro);
+  }
+  
+  .navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
+  
+  .navbar__menu a:not(.btn) {
+    color: var(--cor-texto-suave);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .navbar__menu a:not(.btn):hover {
+    color: var(--cor-ouro-claro);
+  }
+  
+  /* Botão hambúrguer (só aparece no celular) */
+  .navbar__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+  }
+  
+  .navbar__toggle span {
+    width: 26px;
+    height: 3px;
+    background: var(--cor-ouro);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  
+  /* X quando o menu está aberto */
+  .navbar__toggle.aberto span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .navbar__toggle.aberto span:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar__toggle.aberto span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* ===== Hero ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 64px;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(201, 162, 39, 0.12), transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(201, 162, 39, 0.08), transparent 50%),
+      linear-gradient(180deg, #161616 0%, #111111 60%, #0c0c0c 100%);
+    overflow: hidden;
+  }
+  
+  /* listras diagonais bem sutis, lembrando o poste de barbeiro */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent 0 28px,
+      rgba(245, 240, 232, 0.025) 28px 30px
+    );
+    pointer-events: none;
+  }
+  
+  .hero__content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero__tagline {
+    font-family: var(--fonte-titulo);
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    font-size: 0.85rem;
+    color: var(--cor-ouro);
+    margin-bottom: 1rem;
+  }
+  
+  .hero__title {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+  
+  .hero__subtitle {
+    max-width: 540px;
+    margin: 0 auto 2.25rem;
+    color: var(--cor-texto-suave);
+    font-size: 1.1rem;
+  }
+  
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .hero__scroll {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--cor-ouro);
+    font-size: 1.1rem;
+    animation: flutuar 1.8s ease-in-out infinite;
+  }
+  
+  @keyframes flutuar {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(8px); }
+  }
+  
+  /* ===== Seções placeholder ===== */
+  .section {
+    padding: 5rem 0;
+    border-top: 1px solid rgba(245, 240, 232, 0.06);
+    background: var(--cor-fundo);
+  }
+  
+  .section:nth-of-type(even) {
+    background: var(--cor-fundo-2);
+  }
+  
+  .section__title {
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+  
+  .section__title::after {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 3px;
+    background: var(--cor-ouro);
+    margin-top: 0.5rem;
+  }
+  
+  .section__placeholder {
+    color: var(--cor-texto-suave);
+  }
+  
+  .section__subtitle {
+    color: var(--cor-texto-suave);
+    margin-bottom: 2.5rem;
+  }
+  
+  
+  
+  /* ===== Rodapé ===== */
+  .footer {
+    padding: 4rem 0 1.5rem;
+    border-top: 1px solid rgba(201, 162, 39, 0.25);
+    background: #0c0c0c;
+    color: var(--cor-texto-suave);
+    font-size: 0.95rem;
+  }
+  
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .footer__titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--cor-texto);
+    margin-bottom: 1rem;
+  }
+  
+  .footer__texto {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+  
+  .footer__horarios {
+    list-style: none;
+  }
+  
+  .footer__horarios li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed rgba(245, 240, 232, 0.1);
+  }
+  
+  .footer__horarios li span:last-child {
+    color: var(--cor-ouro);
+  }
+  
+  .footer__fechado {
+    color: #ff7b7b !important;
+  }
+  
+  .footer__mapa {
+    width: 100%;
+    height: 180px;
+    border: 1px solid rgba(201, 162, 39, 0.35);
+    border-radius: 8px;
+  }
+  
+  .footer__base {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(245, 240, 232, 0.08);
+    font-size: 0.85rem;
+  }
+  
+  .footer__credito {
+    color: var(--cor-ouro);
+  }
+  
+
+  @media (max-width: 768px) {
+    .footer__grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .footer__base {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  /* ===== Responsivo (celular) ===== */
+  @media (max-width: 768px) {
+    .navbar__toggle {
+      display: flex;
+    }
+  
+    .navbar__menu {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 1.25rem;
+      background: #111111;
+      border-bottom: 1px solid rgba(201, 162, 39, 0.25);
+      padding: 1.75rem 1.25rem;
+      transform: translateY(-130%);
+      transition: transform 0.3s ease;
+    }
+  
+    .navbar__menu.aberto {
+      transform: translateY(0);
+    }
+  
+    .hero__actions .btn {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+  
