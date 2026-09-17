@@ -14,6 +14,16 @@
 
     --branco: #f2f0ea;
     --cinza: #9c9a93;
+    --cor-fundo: #111111;
+    --cor-fundo-2: #1a1a1a;
+    --cor-texto: #f5f0e8;
+    --cor-texto-suave: #b8b0a3;
+    --cor-ouro: #c9a227;
+    --cor-ouro-claro: #e6c75a;
+    --fonte-titulo: "Oswald", sans-serif;
+    --fonte-texto: "Inter", sans-serif;
+    --largura-max: 1100px;
+  
 
     --borda: rgba(193, 157, 45, 0.28);
 }
