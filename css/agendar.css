@@ -1,0 +1,310 @@
+:root {
+   --cor-fundo: #111111;
+   --cor-fundo-2: #1a1a1a;
+   --cor-texto: #f5f0e8;
+   --cor-texto-suave: #b8b0a3;
+   --cor-ouro: #c9a227;
+   --cor-ouro-claro: #e6c75a;
+   --fonte-titulo: "Oswald", sans-serif;
+   --fonte-texto: "Inter", sans-serif;
+   --largura-max: 1100px;
+   --borda: #333333;
+ }
+ 
+ /* Reset */
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+ 
+ html { scroll-behavior: smooth; }
+ 
+ body {
+   font-family: var(--fonte-texto);
+   background: var(--cor-fundo);
+   color: var(--cor-texto);
+   line-height: 1.6;
+ }
+ 
+ .container {
+   max-width: var(--largura-max);
+   margin: 0 auto;
+   padding: 0 1.25rem;
+ }
+ 
+ /* ===== Botões ===== */
+ .btn {
+   display: inline-block;
+   background: var(--cor-ouro);
+   color: #111;
+   font-family: var(--fonte-titulo);
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 0.08em;
+   text-decoration: none;
+   padding: 0.9rem 2.2rem;
+   border-radius: 4px;
+   transition: background 0.25s, transform 0.25s;
+ }
+ .btn:hover { background: var(--cor-ouro-claro); transform: translateY(-2px); }
+ .btn--outline { background: transparent; color: var(--cor-texto); border: 2px solid var(--cor-ouro); }
+ .btn--outline:hover { background: rgba(201,162,39,0.15); }
+ .btn--small { padding: 0.5rem 1.3rem; font-size: 0.85rem; }
+ 
+ /* ===== Navbar ===== */
+ .navbar {
+   position: fixed; top: 0; left: 0; right: 0;
+   z-index: 100;
+   background: rgba(17,17,17,0.85);
+   backdrop-filter: blur(8px);
+   border-bottom: 1px solid rgba(201,162,39,0.25);
+ }
+ .navbar__inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+ .navbar__logo {
+   font-family: var(--fonte-titulo);
+   font-size: 1.35rem; font-weight: 700;
+   text-transform: uppercase; letter-spacing: 0.05em;
+   color: var(--cor-texto); text-decoration: none;
+ }
+ .logo__icon { color: var(--cor-ouro); margin-right: 0.3rem; }
+ .logo__gold { color: var(--cor-ouro); }
+ .navbar__menu { display: flex; align-items: center; gap: 1.75rem; }
+ .navbar__menu a:not(.btn) {
+   color: var(--cor-texto-suave);
+   text-decoration: none;
+   font-size: 0.95rem; font-weight: 500;
+   transition: color 0.2s;
+ }
+ .navbar__menu a:not(.btn):hover { color: var(--cor-ouro-claro); }
+ .navbar__toggle {
+   display: none; flex-direction: column; gap: 5px;
+   background: none; border: none; cursor: pointer; padding: 6px;
+ }
+ .navbar__toggle span {
+   width: 26px; height: 3px; background: var(--cor-ouro);
+   border-radius: 2px; transition: transform 0.3s, opacity 0.3s;
+ }
+ .navbar__toggle.aberto span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+ .navbar__toggle.aberto span:nth-child(2) { opacity: 0; }
+ .navbar__toggle.aberto span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+ 
+ /* ===== Formulário de Agendamento ===== */
+ .agendamento {
+   max-width: 850px;
+   margin: 100px auto 80px;
+   background: var(--cor-fundo-2);
+   border: 1px solid var(--borda);
+   border-radius: 18px;
+   padding: 40px;
+ }
+ .cabecalho { text-align: center; margin-bottom: 40px; }
+ .cabecalho h1 { color: var(--cor-ouro-claro); font-size: 32px; margin-bottom: 10px; }
+ .cabecalho p { color: var(--cor-texto-suave); font-size: 15px; }
+ 
+ .etapa { margin-bottom: 30px; }
+ .etapa h2 { font-size: 19px; margin-bottom: 12px; color: var(--cor-texto); }
+ 
+ .campo { margin-bottom: 18px; }
+ .campo label { display: block; margin-bottom: 8px; font-size: 14px; color: var(--cor-texto-suave); }
+ .campo input {
+   width: 100%; height: 52px; padding: 14px;
+   background: var(--cor-fundo-2);
+   border: 1px solid var(--borda);
+   border-radius: 9px; outline: none;
+   color: var(--cor-texto); font-size: 15px;
+   transition: 0.25s;
+ }
+ .campo input::placeholder { color: #777; }
+ .campo input:focus { border-color: var(--cor-ouro); }
+ 
+ .resumo {
+   background: #151515;
+   border: 1px solid var(--borda);
+   border-radius: 12px;
+   padding: 22px;
+   margin-top: 30px; margin-bottom: 25px;
+ }
+ .resumo p { color: var(--cor-texto-suave); margin-bottom: 10px; font-size: 14px; }
+ .resumo strong { color: var(--cor-texto); }
+ .resumo span { color: var(--cor-ouro-claro); }
+ 
+ .btn-agendar {
+   width: 100%; padding: 16px;
+   border: none; border-radius: 10px;
+   background: var(--cor-ouro);
+   color: #111; font-size: 16px; font-weight: bold;
+   cursor: pointer; transition: 0.25s;
+ }
+ .btn-agendar:hover { background: var(--cor-ouro-claro); transform: translateY(-2px); }
+ 
+ /* ===== Footer ===== */
+ .footer {
+   padding: 4rem 0 2rem;
+   border-top: 1px solid rgba(201,162,39,0.25);
+   background: var(--cor-fundo-2);
+   color: var(--cor-texto-suave);
+   font-size: 0.95rem;
+ }
+ .footer__grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1.2fr;
+   gap: 2.5rem;
+   margin-bottom: 2rem;
+   align-items: start;
+ }
+ .footer__titulo {
+   font-family: var(--fonte-titulo);
+   font-size: 1.1rem;
+   text-transform: uppercase;
+   letter-spacing: 0.06em;
+   color: var(--cor-texto);
+   margin-bottom: 1rem;
+ }
+ .footer__texto { margin-bottom: 1rem; line-height: 1.8; }
+ .footer__horarios { list-style: none; }
+ .footer__horarios li {
+   display: flex; justify-content: space-between;
+   gap: 1rem; padding: 0.4rem 0;
+   border-bottom: 1px dashed rgba(245,240,232,0.1);
+ }
+ .footer__horarios li span:last-child { color: var(--cor-ouro); }
+ .footer__fechado { color: #ff7b7b !important; }
+ .footer__mapa {
+   width: 100%; height: 180px;
+   border: 1px solid rgba(201,162,39,0.35);
+   border-radius: 8px;
+ }
+ .footer__base {
+   display: flex; justify-content: space-between;
+   gap: 1rem; flex-wrap: wrap;
+   padding-top: 1.5rem;
+   border-top: 1px solid rgba(245,240,232,0.08);
+   font-size: 0.85rem;
+ }
+ .footer__credito { color: var(--cor-ouro); }
+ 
+ /* ===== Responsivo ===== */
+ @media (max-width: 768px) {
+   .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
+   .footer__base { flex-direction: column; text-align: center; }
+   .navbar__toggle { display: flex; }
+   .navbar__menu {
+     position: fixed; top: 64px; left: 0; right: 0;
+     flex-direction: column; gap: 1.25
+   }}
+
+   /* ===== SEÇÃO DE AGENDAMENTO ===== */
+.etapa {
+   margin-bottom: 35px;
+ }
+ 
+ .etapa h2 {
+   font-size: 20px;
+   color: var(--cor-ouro-claro);
+   margin-bottom: 15px;
+   font-family: var(--fonte-titulo);
+   text-transform: uppercase;
+ }
+ 
+ /* Select principal */
+ .select-custom {
+   position: relative;
+   width: 100%;
+ }
+ 
+ .select-header {
+   width: 100%;
+   height: 52px;
+   padding: 0 16px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background: var(--cor-fundo-2);
+   border: 1px solid var(--borda);
+   border-radius: 9px;
+   color: var(--cor-texto);
+   font-size: 15px;
+   cursor: pointer;
+   transition: 0.25s;
+ }
+ 
+ .select-header:hover {
+   border-color: var(--cor-ouro);
+ }
+ 
+ /* Ícone da seta */
+ .seta {
+   font-size: 22px;
+   color: var(--cor-ouro-claro);
+   transition: transform 0.25s;
+ }
+ 
+ .select-custom.aberto .seta {
+   transform: rotate(180deg);
+ }
+ 
+ /* Opções */
+ .select-opcoes {
+   display: none;
+   margin-top: 6px;
+   background: var(--cor-fundo-2);
+   border: 1px solid var(--borda);
+   border-radius: 9px;
+   overflow: hidden;
+ }
+ 
+ .select-custom.aberto .select-opcoes {
+   display: block;
+   animation: aparecer 0.2s ease;
+ }
+ 
+ .opcao {
+   display: block;
+   width: 100%;
+   padding: 14px 16px;
+   border-bottom: 1px solid #303030;
+   background: transparent;
+   color: var(--cor-texto);
+   text-align: left;
+   font-size: 15px;
+   cursor: pointer;
+   transition: 0.2s;
+ }
+ 
+ .opcao:hover {
+   background: var(--cor-ouro);
+   color: #111;
+ }
+ 
+ .opcao.selecionada {
+   background: var(--cor-ouro);
+   color: #111;
+   font-weight: bold;
+ }
+ 
+ /* Horários em grid */
+ .select-opcoes.horarios {
+   display: none;
+   padding: 10px;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 8px;
+ }
+ 
+ .select-custom.aberto .select-opcoes.horarios {
+   display: grid;
+ }
+ 
+ .select-opcoes.horarios .opcao {
+   border: 1px solid var(--borda);
+   border-radius: 7px;
+   text-align: center;
+   padding: 12px 5px;
+ }
+ 
+ /* Animação */
+ @keyframes aparecer {
+   from { opacity: 0; transform: translateY(-5px); }
+   to { opacity: 1; transform: translateY(0); }
+ }
+ 

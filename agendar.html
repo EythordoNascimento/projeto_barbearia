@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agendamento | Barbearia</title>
+
+    <link rel="stylesheet" href="css/agendar.css">
+    <link rel="stylesheet" href="css/styles.css" />
+
+</head>
+
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="topo">
+        <div class="container navbar__inner">
+            <a href="/index.html" class="navbar__logo">
+                <span class="logo__icon">✂</span> Corte <span class="logo__gold">de Ouro</span>
+            </a>
+
+            <nav class="navbar__menu" id="menu">
+                <a href="/index.html">Home</a>
+                <a href="planos.html">Serviços</a>
+                <a href="index.html#galeria">Galeria</a>
+                <a href="index.html#sobre">Sobre</a>
+                <a href="index.html#contato">Contato</a>
+                <a href="agendar.html" class="btn btn--small">Agendar</a>
+            </nav>
+
+
+            <button class="navbar__toggle" id="menu-toggle" aria-label="Abrir menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+
+
+    <main class="agendamento">
+
+        <div class="cabecalho">
+            <h1>Agende seu horário</h1>
+            <p>Escolha o serviço, horário e preencha seus dados.</p>
+        </div>
+
+
+        <form id="formAgendamento">
+
+
+            <!-- SERVIÇO -->
+            <section class="etapa">
+
+
+                <h2>1. Selecionar Serviço</h2>
+
+
+                <div class="select-custom" id="servicoSelect">
+
+
+                    <button type="button" class="select-header">
+                        <span id="servicoTexto">Selecionar Serviço</span>
+
+
+                        <span class="seta">⌄</span>
+                    </button>
+
+
+                    <div class="select-opcoes">
+
+
+                        <button type="button" class="opcao" data-servico="Corte">
+                            Corte
+                        </button>
+
+
+                        <button type="button" class="opcao" data-servico="Barba">
+                            Barba
+                        </button>
+
+
+                        <button type="button" class="opcao" data-servico="Corte + Barba">
+                            Corte + Barba
+                        </button>
+
+
+                        <button type="button" class="opcao" data-servico="Corte Infantil">
+                            Corte Infantil
+                        </button>
+
+
+                        <button type="button" class="opcao" data-servico="Sobrancelha">
+                            Sobrancelha
+                        </button>
+
+
+                        <button type="button" class="opcao" data-servico="Luzes / Platinado">
+                            Luzes / Platinado
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <input type="hidden" id="servicoSelecionado" required>
+
+
+            </section>
+
+
+
+
+            <!-- HORÁRIO -->
+            <section class="etapa">
+
+
+                <h2>2. Escolher Horário</h2>
+
+
+                <div class="select-custom" id="horarioSelect">
+
+
+                    <button type="button" class="select-header">
+
+
+                        <span id="horarioTexto">
+                            Escolher horário
+                        </span>
+
+
+                        <span class="seta">⌄</span>
+
+
+                    </button>
+
+
+
+
+                    <div class="select-opcoes horarios">
+
+
+                        <button type="button" class="opcao" data-horario="08:00">
+                            08:00
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="08:30">
+                            08:30
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="09:00">
+                            09:00
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="09:30">
+                            09:30
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="10:00">
+                            10:00
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="10:30">
+                            10:30
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="11:00">
+                            11:00
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="11:30">
+                            11:30
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="13:00">
+                            13:00
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="13:30">
+                            13:30
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="14:00">
+                            14:00
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="14:30">
+                            14:30
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="15:00">
+                            15:00
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="15:30">
+                            15:30
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="16:00">
+                            16:00
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="16:30">
+                            16:30
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="17:00">
+                            17:00
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="17:30">
+                            17:30
+                        </button>
+
+
+                        <button type="button" class="opcao" data-horario="18:00">
+                            18:00
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <input type="hidden" id="horarioSelecionado" required>
+
+
+            </section>
+
+
+
+
+            <!-- DADOS DO CLIENTE -->
+            <section class="etapa">
+
+
+                <h2>3. Seus dados</h2>
+
+
+                <div class="campo">
+
+
+                    <label for="nome">
+                        Nome completo
+                    </label>
+
+
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+
+
+                </div>
+
+
+
+
+                <div class="campo">
+
+
+                    <label for="email">
+                        Gmail
+                    </label>
+
+
+                    <input type="email" id="email" name="email" placeholder="Digite seu Gmail" required>
+
+
+                </div>
+
+
+
+
+                <div class="campo">
+
+
+                    <label for="telefone">
+                        Telefone
+                    </label>
+
+
+                    <input type="tel" id="telefone" name="telefone" placeholder="(81) 99999-9999" maxlength="15"
+                        required>
+
+
+                </div>
+
+
+            </section>
+
+
+
+
+            <!-- RESUMO -->
+            <section class="resumo">
+
+
+                <h2>Resumo do agendamento</h2>
+
+
+                <p>
+                    <strong>Serviço:</strong>
+                    <span id="resumoServico">Não selecionado</span>
+                </p>
+
+
+                <p>
+                    <strong>Horário:</strong>
+                    <span id="resumoHorario">Não selecionado</span>
+                </p>
+
+
+            </section>
+
+
+
+
+            <button type="submit" class="btn-agendar">
+                Confirmar agendamento
+            </button>
+
+
+        </form>
+
+    </main>
+    <footer class="footer" id="contato">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__coluna">
+                    <h3 class="footer__titulo"><span class="logo__icon">✂</span> Barbearia <span class="logo__gold">UNIT
+                            PE</span></h3>
+                    <p class="footer__texto">
+                        Av. Mal. Mascarenhas de Morais, 4861 — Imbiribeira<br />
+                        Recife / PE — Brasil
+                    </p>
+                    <p class="footer__texto">
+                        📞 (81) 3878-5100<br />
+                        ✉️ contato@unitpe.edu.br
+                    </p>
+                </div>
+
+                <div class="footer__coluna">
+                    <h3 class="footer__titulo">Horários</h3>
+                    <ul class="footer__horarios">
+                        <li><span>Segunda a sexta</span> <span>08h – 18h</span></li>
+                        <li><span>Sábado</span> <span>08h – 12h</span></li>
+                        <li><span>Domingo</span> <span class="footer__fechado">Fechado</span></li>
+                    </ul>
+                </div>
+
+                <div class="footer__coluna">
+                    <h3 class="footer__titulo">Onde estamos</h3>
+                    <iframe class="footer__mapa"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=-34.9180%2C-8.1210%2C-34.9080%2C-8.1150&amp;layer=mapnik&amp;marker=-8.1180%2C-34.9130"
+                        title="Mapa da localização da UNIT PE Imbiribeira" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="footer__base">
+                <p>© 2026 Barbearia UNIT PE — Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script_agendar.js"></script>
+
+
+
+</body>
+
+</html>
