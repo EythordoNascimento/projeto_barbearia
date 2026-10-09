@@ -37,6 +37,35 @@
     margin: 0 auto;
     padding: 0 1.25rem;
   }
+
+  /* Botão voltar ao topo */
+.btn-topo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--cor-ouro);
+  border: none;
+  padding: 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #111;
+  box-shadow: 0 0 8px rgba(201,162,39,0.4);
+}
+
+/* Animação de entrada nos serviços */
+.servico {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.6s;
+}
+.servico.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
   
   /* ===== Botões ===== */
   .btn {
