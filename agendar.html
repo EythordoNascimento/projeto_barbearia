@@ -8,7 +8,7 @@
     <title>Agendamento | Barbearia</title>
 
     <link rel="stylesheet" href="css/agendar.css">
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
 </head>
 
@@ -21,22 +21,17 @@
             </a>
 
             <nav class="navbar__menu" id="menu">
-                <a href="/index.html">Home</a>
-                <a href="planos.html">Serviços</a>
+                <a href="planos.html">Planos</a>
                 <a href="/galeria.html">Galeria</a>
-                <a href="index.html#sobre">Sobre</a>
-                <a href="index.html#contato">Contato</a>
-                <a href="agendar.html" class="btn btn--small">Agendar</a>
+                <a href="#contato">Contato</a>
+                <a href="/agendar.html" class="btn btn--small" target="_blank">Agendar</a>
             </nav>
-
 
             <button class="navbar__toggle" id="menu-toggle" aria-label="Abrir menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </header>
-
-
 
     <main class="agendamento">
 
@@ -45,310 +40,175 @@
             <p>Escolha o serviço, horário e preencha seus dados.</p>
         </div>
 
-
         <form id="formAgendamento">
 
+            <!-- MENSAGEM DE SUCESSO -->
+            <div class="mensagem-sucesso" id="mensagemSucesso" hidden></div>
 
             <!-- SERVIÇO -->
             <section class="etapa">
 
-
                 <h2>1. Selecionar Serviço</h2>
-
 
                 <div class="select-custom" id="servicoSelect">
 
-
                     <button type="button" class="select-header">
                         <span id="servicoTexto">Selecionar Serviço</span>
-
-
                         <span class="seta">⌄</span>
                     </button>
-
 
                     <div class="select-opcoes">
-
-
-                        <button type="button" class="opcao" data-servico="Corte">
-                            Corte
-                        </button>
-
-
-                        <button type="button" class="opcao" data-servico="Barba">
-                            Barba
-                        </button>
-
-
-                        <button type="button" class="opcao" data-servico="Corte + Barba">
-                            Corte + Barba
-                        </button>
-
-
-                        <button type="button" class="opcao" data-servico="Corte Infantil">
-                            Corte Infantil
-                        </button>
-
-
-                        <button type="button" class="opcao" data-servico="Sobrancelha">
-                            Sobrancelha
-                        </button>
-
-
-                        <button type="button" class="opcao" data-servico="Luzes / Platinado">
-                            Luzes / Platinado
-                        </button>
-
-
+                        <button type="button" class="opcao" data-servico="Corte">Corte</button>
+                        <button type="button" class="opcao" data-servico="Barba">Barba</button>
+                        <button type="button" class="opcao" data-servico="Corte + Barba">Corte + Barba</button>
+                        <button type="button" class="opcao" data-servico="Corte Infantil">Corte Infantil</button>
+                        <button type="button" class="opcao" data-servico="Sobrancelha">Sobrancelha</button>
+                        <button type="button" class="opcao" data-servico="Luzes / Platinado">Luzes / Platinado</button>
                     </div>
-
 
                 </div>
 
-
-                <input type="hidden" id="servicoSelecionado" required>
-
+                <input type="hidden" id="servicoSelecionado">
 
             </section>
 
-
-
-
-            <!-- HORÁRIO -->
+            <!-- DATA E HORÁRIO -->
             <section class="etapa">
 
+                <h2>2. Escolher Data e Horário</h2>
 
-                <h2>2. Escolher Horário</h2>
+                <div class="agenda">
 
+                    <!-- CALENDÁRIO -->
+                    <div class="calendario" aria-label="Calendário de agendamento">
 
-                <div class="select-custom" id="horarioSelect">
+                        <div class="calendario__topo">
+                            <button type="button" class="calendario__nav" id="mesAnterior"
+                                aria-label="Mês anterior">‹</button>
+                            <h3 id="calendarioTitulo">Mês Ano</h3>
+                            <button type="button" class="calendario__nav" id="mesProximo"
+                                aria-label="Próximo mês">›</button>
+                        </div>
 
+                        <div class="calendario__semana" aria-hidden="true">
+                            <span>Dom</span>
+                            <span>Seg</span>
+                            <span>Ter</span>
+                            <span>Qua</span>
+                            <span>Qui</span>
+                            <span>Sex</span>
+                            <span>Sáb</span>
+                        </div>
 
-                    <button type="button" class="select-header">
+                        <div class="calendario__dias" id="calendarioDias"></div>
 
-
-                        <span id="horarioTexto">
-                            Escolher horário
-                        </span>
-
-
-                        <span class="seta">⌄</span>
-
-
-                    </button>
-
-
-
-
-                    <div class="select-opcoes horarios">
-
-
-                        <button type="button" class="opcao" data-horario="08:00">
-                            08:00
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="08:30">
-                            08:30
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="09:00">
-                            09:00
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="09:30">
-                            09:30
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="10:00">
-                            10:00
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="10:30">
-                            10:30
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="11:00">
-                            11:00
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="11:30">
-                            11:30
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="13:00">
-                            13:00
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="13:30">
-                            13:30
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="14:00">
-                            14:00
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="14:30">
-                            14:30
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="15:00">
-                            15:00
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="15:30">
-                            15:30
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="16:00">
-                            16:00
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="16:30">
-                            16:30
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="17:00">
-                            17:00
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="17:30">
-                            17:30
-                        </button>
-
-
-                        <button type="button" class="opcao" data-horario="18:00">
-                            18:00
-                        </button>
-
+                        <div class="legenda">
+                            <span class="legenda_item"><i class="legendacor legenda_cor--hoje"></i> Hoje</span>
+                            <span class="legenda_item"><i class="legendacor legenda_cor--disponivel"></i> Dias
+                                disponíveis</span>
+                            <span class="legenda_item"><i class="legendacor legenda_cor--parcial"></i> Com horários
+                                ocupados</span>
+                            <span class="legenda_item"><i class="legendacor legenda_cor--fechado"></i>
+                                Indisponível</span>
+                        </div>
 
                     </div>
 
+                    <!-- HORÁRIOS DO DIA -->
+                    <div class="horarios-painel">
+
+                        <h3 id="horariosTitulo">Horários</h3>
+                        <p class="horarios-aviso" id="horariosAviso">Selecione um dia no calendário para ver os
+                            horários.</p>
+
+                        <div class="horarios-grid" id="horariosGrid"></div>
+
+                        <div class="legenda">
+                            <span class="legenda_item"><i class="legendacor legenda_cor--livre"></i> Livre</span>
+                            <span class="legenda_item"><i class="legendacor legenda_cor--ocupado"></i> Já
+                                escolhido</span>
+                            <span class="legenda_item"><i class="legendacor legenda_cor--selecionado"></i> Seu
+                                horário</span>
+                        </div>
+
+                    </div>
 
                 </div>
 
-
-                <input type="hidden" id="horarioSelecionado" required>
-
+                <input type="hidden" id="dataSelecionada">
+                <input type="hidden" id="horarioSelecionado">
 
             </section>
-
-
-
 
             <!-- DADOS DO CLIENTE -->
             <section class="etapa">
 
-
                 <h2>3. Seus dados</h2>
 
-
                 <div class="campo">
-
-
-                    <label for="nome">
-                        Nome completo
-                    </label>
-
-
+                    <label for="nome">Nome completo</label>
                     <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
-
-
                 </div>
 
-
-
-
                 <div class="campo">
-
-
-                    <label for="email">
-                        Gmail
-                    </label>
-
-
+                    <label for="email">Gmail</label>
                     <input type="email" id="email" name="email" placeholder="Digite seu Gmail" required>
-
-
                 </div>
 
-
-
-
                 <div class="campo">
-
-
-                    <label for="telefone">
-                        Telefone
-                    </label>
-
-
+                    <label for="telefone">Telefone</label>
                     <input type="tel" id="telefone" name="telefone" placeholder="(81) 99999-9999" maxlength="15"
                         required>
-
-
                 </div>
 
-
             </section>
-
-
-
 
             <!-- RESUMO -->
             <section class="resumo">
 
-
                 <h2>Resumo do agendamento</h2>
-
 
                 <p>
                     <strong>Serviço:</strong>
                     <span id="resumoServico">Não selecionado</span>
                 </p>
 
+                <p>
+                    <strong>Data:</strong>
+                    <span id="resumoData">Não selecionada</span>
+                </p>
 
                 <p>
                     <strong>Horário:</strong>
                     <span id="resumoHorario">Não selecionado</span>
                 </p>
 
+                <p>
+                    <strong>Nome Completo:</strong>
+                    <span id="resumoNome">Não selecionado</span>
+                </p>
 
             </section>
 
-
-
+            <!-- MENSAGEM DE ERRO -->
+            <div class="erro-etapa" id="erroAgendamento" hidden></div>
 
             <button type="submit" class="btn-agendar">
                 Confirmar agendamento
             </button>
 
-
         </form>
 
     </main>
+
+
     <footer class="footer" id="contato">
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__coluna">
                     <h3 class="footer__titulo"><span class="logo__icon">✂</span> Barbearia <span class="logo__gold">UNIT
-                            PE</span></h3>
+                            PE</span>
+                    </h3>
                     <p class="footer__texto">
                         Av. Mal. Mascarenhas de Morais, 4861 — Imbiribeira<br />
                         Recife / PE — Brasil
@@ -383,9 +243,8 @@
         </div>
     </footer>
 
+    <!-- Se o menu mobile usa outro arquivo (ex.: js/script.js), inclua-o aqui também -->
     <script src="js/script_agendar.js"></script>
-
-
 
 </body>
 
